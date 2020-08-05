@@ -78,11 +78,11 @@ A simple Vue.js built in the browser looks like this.
 
 <script>
     const app = new Vue({
-  		el: '#app',
-  		data: {
-    		message: 'Hello Vue!'
-  		}
-	});
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    });
 </script>
 ```
 
@@ -109,7 +109,7 @@ We use the ``` {{ }} ``` syntax to display dynamic values taken from the ``data`
 
 ```javascript
 const vm = new Vue({
-   	el: '#app',
+    el: '#app',
     
     data: {
         num = 100;
@@ -132,16 +132,16 @@ Methods can also be accessed in the view with the ``{{ }}`` syntax:
 
 <script>
     const app = new Vue({
-  		el: '#app',
-  		data: {
-    		message: 'Hello Vue!'
-  		}
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
         methods: {
-        	sayHello() {
-        		return 'Hello!';
-    		}
+            sayHello() {
+                return 'Hello!';
+    	    }
     	}
-	});
+    });
 </script>
 ```
 
@@ -465,7 +465,7 @@ For transferring data from the parent to the child we use ``props``.
 </template>
 
 <script>
-	export default {
+    export default {
         props: ['name']
     }
 </script>
@@ -475,8 +475,8 @@ For transferring data from the parent to the child we use ``props``.
 <!-- parent -->
 <template>
     <div>
-		<ChildComponent v-bind:name="name" />    <!-- we need v-bind -->
-	</div>
+        <ChildComponent v-bind:name="name" />    <!-- we need v-bind -->
+    </div>
 </template>
 
 <script>
@@ -725,7 +725,7 @@ With slots we can pass content (entire HTML blocks) between components
 </template>
 
 <script>
-	import Quote from './components/Quote.vue';
+    import Quote from './components/Quote.vue';
     
     export default {
         components: {
@@ -744,7 +744,7 @@ With slots we can pass content (entire HTML blocks) between components
 </template>
 
 <script>
-	export default {
+    export default {
         
     }
 </script>
@@ -773,7 +773,7 @@ But we can also name slots:
 </template>
 
 <script>
-	import Quote from './components/Quote.vue';
+    import Quote from './components/Quote.vue';
     
     export default {
         components: {
@@ -796,7 +796,7 @@ But we can also name slots:
 </template>
 
 <script>
-	export default {
+    export default {
         
     }
 </script>
@@ -811,7 +811,7 @@ The ``<component>`` element allows us to dynamically add components
 ```html
 <!-- parent -->
 <template>
-	<div>
+    <div>
         <button @click="selectedComponent = 'C1'">C1</button>
         <button @click="selectedComponent = 'C2'">C2</button>
         <button @click="selectedComponent = 'C3'">C3</button>
@@ -821,7 +821,7 @@ The ``<component>`` element allows us to dynamically add components
 </template>
 
 <script>
-	import C1 from './components/C1.vue';
+    import C1 from './components/C1.vue';
     import C2 from './components/C2.vue';
     import C3 from './components/C3.vue';
     
@@ -930,9 +930,9 @@ Vue.directive('directive-name', {
         setTimeout(() => {
             if (binding.arg == 'background') {
             	el.style.backgroundColor = binding.value;
-        	} else {
+            } else {
             	el.style.color = binding.value;
-        	}
+            }
         }, delay);
     }
 });
@@ -968,7 +968,7 @@ we can use the ``directives`` properties inside the ``<script>`` tag.
                             el.style.color = binding.value;
                         }
                     }, delay);
-    			}
+                }
             }
         }
     }
@@ -1046,7 +1046,7 @@ We basically move the code we need to an external file where we export an object
 const example = {
   	data() {
         return {
-        	text: 'Hello'
+            text: 'Hello'
         }
     },
     methods: {
@@ -1148,7 +1148,7 @@ Example:
     }
     
     .slide-enter-active {
-		animation: slide_in 1s ease-out forwards;
+        animation: slide_in 1s ease-out forwards;
     }
     .slide-leave {
         
@@ -1395,7 +1395,7 @@ To avoid duplicated code we can use ``getters`` to fetch the store from differen
 
 ```javascript
 const Store = new Vuex.Store({
-   	state: { // properties our app has
+    state: { // properties our app has
         counter: 0
     },
     getters: {
@@ -1516,9 +1516,9 @@ const state = {
 };
 
 const getters = {
-  	  doubleCounter(state) {
-            return state.counter * 2;
-      }
+    doubleCounter(state) {
+        return state.counter * 2;
+    }
 };
 
 const mutations = {
@@ -1528,7 +1528,7 @@ const mutations = {
 };
 
 const actions = {
-  	incrementAfterTimeout: ({ commit }, payload) => {
+    incrementAfterTimeout: ({ commit }, payload) => {
         setTimeout(commit('increment'), payload.duration);
     }
 };
@@ -1542,7 +1542,7 @@ And we have to import it as follow:
 import counter from './modules/counter.js';
 
 const Store = new Vuex.Store({
-	modules: {
+    modules: {
         store
     }
 });
