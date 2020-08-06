@@ -538,6 +538,11 @@ And then in the parent we listen to this event with the v-on directive.
 
 #### Event Bus
 
+###### DEPRECATION WARNING
+
+With Vue 3 the use of a Vue instance as Event Bus is deprecated.
+In case an event bus was needed the use of libraries such as [mitt](https://github.com/developit/mitt) is suggested. Also [Vuex](#vuex---better-state-management) is a good alternative for bigger applications.
+
 ```javascript
 // main.js
 import Vue from 'vue'
